@@ -13,11 +13,15 @@ import com.va.assessment.kundan.convertor.FlightConvertor;
 
 /**
  * @author Kundan
- *
+ * Configuration file 
  */
 @Configuration
 public class ConversionServiceConfig {
 
+	/**
+	 * Create instance of FlightConvertor and register it with Default Conversion service
+	 * @return ConversionService
+	 */
 	@Bean
 	@Primary
 	public ConversionService createConversionServiceAndRegisterConvetor() {

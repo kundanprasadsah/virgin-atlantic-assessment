@@ -15,7 +15,7 @@ import com.va.assessment.kundan.model.Flight;
 public class FlightInformationView {
 
 	private LocalDate date;
-	
+	private Integer noOfFlights;
 	private List<FlightView> flightList;
 
 	public LocalDate getDate() {
@@ -34,4 +34,12 @@ public class FlightInformationView {
 		this.flightList = flightList;
 	}
 
+	public Integer getNoOfFlights() {
+		return noOfFlights;
+	}
+
+	public void setNoOfFlights(Integer noOfFlights) {
+		this.noOfFlights = noOfFlights;
+	}
+	
 }

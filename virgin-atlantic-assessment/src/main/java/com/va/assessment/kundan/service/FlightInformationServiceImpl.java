@@ -6,7 +6,6 @@ package com.va.assessment.kundan.service;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -20,6 +19,7 @@ import com.va.assessment.kundan.model.Flight;
 import com.va.assessment.kundan.view.FlightView;
 
 /**
+ * 
  * @author Kundan
  *
  */
@@ -34,6 +34,9 @@ public class FlightInformationServiceImpl implements IFlightInformationService {
 	
 	public List<FlightView> getFlightsOnDate(LocalDate departureDate){
 		
+		if (departureDate == null ) {
+			throw new NullPointerException("Departure Date can't be null");
+		}
 		List<Flight> flightList = csvReader.getFlights();
 		
 		DayOfWeek departureDay = departureDate.getDayOfWeek();

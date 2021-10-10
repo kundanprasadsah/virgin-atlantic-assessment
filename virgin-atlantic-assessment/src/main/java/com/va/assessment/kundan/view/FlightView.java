@@ -6,6 +6,8 @@ package com.va.assessment.kundan.view;
 import java.time.LocalTime;
 
 /**
+ * FlightView holds flight data that will be displayed in UI. It implements Comparable interface 
+ * so that the flights can be returned in chronological order of departure time.
  * @author Kundan
  *
  */
@@ -19,6 +21,9 @@ public class FlightView implements Comparable<FlightView>{
 	
 	private String flightNumber;
 
+	/**
+	 * Compare current Flight's departure time with the departure time of supplied other object 
+	 */
 	@Override
 	public int compareTo(FlightView other) {
 		return this.departureTime.compareTo(other.departureTime);

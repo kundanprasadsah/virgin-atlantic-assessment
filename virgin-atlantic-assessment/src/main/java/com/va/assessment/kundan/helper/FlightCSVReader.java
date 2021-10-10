@@ -15,6 +15,11 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.va.assessment.kundan.model.Flight;
 
+/**
+ * FlightCSVReader loads flights.csv file from the classpath, read each records and creates a list of flight records.
+ * @author Kundan
+ *
+ */
 @Component
 public class FlightCSVReader {
 
@@ -31,18 +36,23 @@ public class FlightCSVReader {
 		return this.flightList;
 	}
 
+	/**
+	 * Read flight records from flights.csv and stores in the list for future use. 
+	 */
 	private void readFlightsFromCSV() {
 
 		InputStream flightCSVInputStream = FlightCSVReader.class.getClassLoader().getResourceAsStream(FLIGHT_CSV_FILE_NAME); 
 		Reader reader = new BufferedReader(new InputStreamReader(flightCSVInputStream));
 
-		//CSVReader flightCSVReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
 		CsvToBean<Flight> flightCSVToBean = new CsvToBeanBuilder(reader).withType(Flight.class).build();
 
 		this.flightList = flightCSVToBean.parse();
 
 	}
 	
+	/**
+	 * Iterate through the flightList List and creates a set of the days when flight departs
+	 */
 	private void populateDepartureDays() {
 		
 		for ( Flight flight : this.flightList) {
@@ -70,8 +80,6 @@ public class FlightCSVReader {
 				flight.getDepartureDays().add(DayOfWeek.SATURDAY);
 			}
 		}
-		
 	}
-	
 
 }
