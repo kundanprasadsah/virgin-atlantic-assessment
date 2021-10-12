@@ -20,7 +20,7 @@ import com.va.assessment.kundan.model.Flight;
 import com.va.assessment.kundan.view.FlightInformationView;
 import com.va.assessment.kundan.view.FlightSearch;
 import com.va.assessment.kundan.view.FlightView;
-import com.va.assessment.kundan.view.Template;
+import com.va.assessment.kundan.view.FlightInfoTemplate;
 
 /**
  * 
@@ -44,7 +44,7 @@ public class FlightInformationServiceImpl implements IFlightInformationService {
 		
 		model.addAttribute("flightSearch", flightSearch);
 		model.addAttribute("flightSearchAction", "/viewflights");
-		return Template.SEARCH_FLIGHT_VIEW.label;
+		return FlightInfoTemplate.SEARCH_FLIGHT_VIEW.label;
 		
 	}
 	
@@ -62,7 +62,7 @@ public class FlightInformationServiceImpl implements IFlightInformationService {
 		
 		model.addAttribute("flightInformation", flightInfoView);
 		model.addAttribute("searchFlight", "searchflights");
-		return Template.FLIGHT_INFORMATION.label;
+		return FlightInfoTemplate.FLIGHT_INFORMATION.label;
 		
 	}
 	
