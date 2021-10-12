@@ -36,7 +36,7 @@ public class FlightConvertor implements Converter<Flight, FlightView> {
 		}
 		
 		DateTimeFormatter formatter  = DateTimeFormatter.ofPattern("H:m");
-		LocalTime time = LocalTime.parse(departureTime, formatter);
+		LocalTime time = LocalTime.parse(departureTime.trim(), formatter);
 		
 		return time;
 	}

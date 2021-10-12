@@ -8,6 +8,15 @@ group = 'com.va.assessment'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+bootJar {
+	classifier = 'boot'
+	mainClass = 'com.va.assessment.kundan.VirginAtlanticAssessmentApplication'
+}
+
+jar {
+	classifier = ''
+}
+
 repositories {
 	mavenCentral()
 }
@@ -20,6 +29,7 @@ dependencies {
 	implementation 'com.opencsv:opencsv:4.0'
 	implementation 'org.apache.commons:commons-lang3'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
 }
 
 test {

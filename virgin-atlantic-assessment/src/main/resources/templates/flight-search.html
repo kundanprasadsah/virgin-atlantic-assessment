@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8"/>
+	    <title>Virgin Atlantic - Flight Information</title>
+	    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+	    
+	</head>
+
+	<body>
+		
+		<nav class="navbar navbar-dark bg-primary static-top">
+			<span class="navbar-text" style="padding-left: 25%; color: white;">
+    			Virgin Atlantic Flight Information
+  			</span>
+		</nav>
+
+		<div class="container">
+		    <form method="post" th:action="${flightSearchAction}" th:object="${flightSearch}" th:id="flightSearch">
+		        <div class="form-group row">
+		            <div class="col-md-4 mt-5">
+		                <label for="departureDate">Please enter your departure date (MM/DD/YY)</label>
+		                <br><br>
+		                <div class="input-group date">
+		                    <input type="text" class="form-control" id="departureDate" autocomplete="off" th:field="*{departureDate}"/>
+		                </div>
+		            </div>
+		        </div>
+				<br><br>
+		        <button class="btn btn-primary" type="submit">Search Flights</button>
+		    </form>
+
+		</div>
+
+	</body>
+</html>

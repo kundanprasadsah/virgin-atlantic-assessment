@@ -25,7 +25,7 @@ import com.va.assessment.kundan.view.FlightView;
  *
  */
 @RestController
-public class FlightInformationController {
+public class FlightInformationRestController {
 
 	@Autowired
 	private IFlightInformationService service;
